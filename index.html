@@ -65,7 +65,8 @@ mark{background:var(--mark);color:inherit;border-radius:2px}
 .disc{font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-top:28px}
 @media (max-width:860px){
   #menuBtn{display:inline-block}
-  .wrap{grid-template-columns:1fr}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  main{min-width:0}
   nav.side{position:fixed;left:0;top:56px;width:86vw;max-width:340px;z-index:30;transform:translateX(-105%);transition:transform .2s;box-shadow:0 0 30px rgba(0,0,0,.25)}
   nav.side.open{transform:none}
   main{padding:20px 16px 60px}
@@ -83,12 +84,29 @@ mark{background:var(--mark);color:inherit;border-radius:2px}
   body{font-size:11pt;background:#fff;color:#000}
   a{color:#000}
 }
+
+/* schema delle scelte */
+.dt{font-family:var(--ui);font-size:14px;line-height:1.45;margin:16px 0}
+.dt .root{background:var(--accent);color:#fff;border-radius:10px;padding:10px 14px;font-weight:650;font-size:15px}
+.dt .root small{display:block;font-weight:400;opacity:.9;font-size:12.5px}
+.dt .branches{border-left:3px solid var(--accent);margin:0 0 0 18px;padding:10px 0 2px 16px;display:grid;gap:10px}
+.dt .opt{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.dt .opt:before{content:"";position:absolute;left:-19px;top:18px;width:16px;border-top:3px solid var(--accent)}
+.dt .opt h4{margin:0 0 6px;font-size:14.5px;color:var(--accent)}
+.dt .opt h4 .amt{display:inline-block;margin-left:6px;background:var(--accent-soft);color:var(--ink);border-radius:6px;padding:1px 7px;font-weight:600;font-size:12.5px}
+.dt dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 12px;margin:0}
+.dt dt{font-weight:600;color:var(--muted)}
+.dt dd{margin:0}
+.dt .rel{margin-top:7px;font-size:13px;color:var(--muted)}
+.dt .rel b{color:var(--ink)}
+.dt .warn{border-style:dashed}
+@media (max-width:560px){.dt dl{grid-template-columns:1fr}.dt dt{margin-top:4px}}
 </style>
 </head>
 <body>
 <header class="top">
   <button class="btn" id="menuBtn" aria-label="Indice">☰ Indice</button>
-  <div class="t">DL 205/2026 – Campi Flegrei<small>Analisi e testi delle norme richiamate · aggiornato al 12 novembre 2026</small></div>
+  <div class="t">DL 205/2026 – Campi Flegrei<small>Analisi e testi delle norme richiamate · aggiornato al 19 novembre 2026</small></div>
   <div class="sp"></div>
   <button class="btn hide-s" id="themeBtn">Tema</button>
   <button class="btn" id="printBtn">Stampa / PDF</button>
@@ -1874,6 +1892,70 @@ mark{background:var(--mark);color:inherit;border-radius:2px}
 <p>In questa scheda mancano ancora quattro testi, oggi solo citati: DPR 380/2001 artt. 9-bis, 93 e 94; DPR 445/2000 artt. 46, 47, 75 e 76; DM Finanze 701/1994; le norme dei tre condoni (L. 47/1985, artt. 31–35; L. 724/1994, art. 39; DL 269/2003, art. 32). Sono il prossimo blocco da aggiungere.</p></section>
 <section id="contributi" class="tab" data-title="Approfondimento – Contributi ai privati"><h1>Approfondimento – Contributi ai privati</h1>
 <p>Dopo il DL 205 i privati dei Campi Flegrei hanno sette linee di contributo. Tutte sono gestite dal Commissario, con domanda alla struttura di supporto, decisione in 60 giorni (30 per il pronto ripristino) e controlli su almeno il 15% delle domande accolte.</p>
+<h2 id="scelte">Schema delle scelte: abitazione inagibile o agibile</h2>
+<p>Quadro delle possibilità per un'abitazione inagibile (sgomberata) e per un'abitazione agibile, con i requisiti di accesso in termini di schede AeDES (danno e agibilità) e CARTIS (vulnerabilità). Aggiornato al 19 novembre 2026; dove indicato, i dettagli attuativi dipendono dalle ordinanze del Commissario.</p>
+<div class="dt">
+<div class="root">Abitazione inagibile<small>Abitazione principale, abituale e continuativa, danneggiata e sgomberata</small></div>
+<div class="branches">
+<div class="opt"><h4>A. Pronto ripristino <span class="amt">fino a 30.000 € per unità</span></h4>
+<dl><dt>Norma</dt><dd>Art. 13-bis DL 144/2026, inserito dall'art. 15 DL 205/2026</dd>
+<dt>Per</dt><dd>Danni leggeri: riparazioni e interventi locali, lavori conclusi in 120 giorni (prorogabili una volta di 60)</dd>
+<dt>Eventi</dt><dd>Tutti quelli dei regimi di ripristino (vedi B), con le stesse regole</dd>
+<dt>AeDES</dt><dd>Esito <b>B</b> dell'unità strutturale (obbligatorio)</dd>
+<dt>CARTIS</dt><dd>Non richiesta</dd>
+<dt>Scadenza</dt><dd>Domanda entro il 31/12/2026, a pena di inammissibilità</dd></dl>
+<div class="rel"><b>Si somma con D</b> (vulnerabilità), su lavori diversi · <b>Alternativo a B</b> · Non spetta se servono interventi strutturali oltre riparazioni e interventi locali</div></div>
+<div class="opt"><h4>B. Ripristino ordinario <span class="amt">450 €/m² danni leggeri · 1.200 €/m² danni severi</span></h4>
+<dl><dt>Norma</dt><dd>Art. 9-novies DL 76/2024 e norme che vi rinviano; dal DL 205 gestito dal Commissario (art. 12)</dd>
+<dt>Per</dt><dd>Riparazione e interventi locali (danni leggeri) o riparazione e miglioramento sismico (danni severi)</dd>
+<dt>Eventi</dt><dd>20/05/2024 · 13 e 15/03/2025 · maggio–settembre 2025 · 21/05/2026 · 31/07 e 01/08/2026 (vedi tabella sotto)</dd>
+<dt>AeDES</dt><dd>Sopralluogo e provvedimento di sgombero; il contributo dipende dal livello di danno (leggero o severo) e dal livello operativo, non da un singolo esito</dd>
+<dt>CARTIS</dt><dd>Non richiesta</dd></dl>
+<div class="rel"><b>Esclude D</b> (la L. 207/2024 riserva D agli edifici non beneficiari del 9-novies)</div></div>
+<div class="opt"><h4>C. Delocalizzazione <span class="amt">stesso importo di B</span></h4>
+<dl><dt>Norma</dt><dd>Art. 14 DL 205/2026</dd>
+<dt>Requisiti</dt><dd>Quelli di B, più l'istanza congiunta di tutti gli aventi diritto dell'intero edificio</dd></dl>
+<div class="rel"><b>Alternativa</b> ai contributi di riparazione e riqualificazione</div></div>
+</div>
+<div class="root" style="margin-top:18px">Abitazione agibile<small>Nessuno sgombero</small></div>
+<div class="branches">
+<div class="opt"><h4>D. Riduzione della vulnerabilità <span class="amt">70% · 100% con reddito &lt; 28.000 €</span></h4>
+<dl><dt>Norma</dt><dd>L. 207/2024, art. 1, c. 694–702; DM 12/11/2025; percentuale portata al 70% dal DL 144/2026 e al 70% o 100% dall'art. 16 DL 205/2026 (reddito imponibile al netto dell'abitazione principale)</dd>
+<dt>Per</dt><dd>Rafforzamento locale o miglioramento sismico</dd>
+<dt>Eventi</dt><dd>Nessuno: non serve un danno, la data dei terremoti non conta</dd>
+<dt>CARTIS</dt><dd>Fasce <b>C, D, E, F</b>: domanda entro il 31 luglio (2026–2029); fascia <b>B</b>: solo nella seconda finestra (entro il 15 ottobre), se restano fondi; fasce A e A+ escluse</dd>
+<dt>AeDES</dt><dd>Non richiesta</dd>
+<dt>Altro</dt><dd>Abitazione principale abitata da almeno 9 mesi; edificio non beneficiario dei contributi 9-novies</dd></dl>
+<div class="rel">Vale anche per edifici inagibili che non prendono B · <b>Si somma con A</b></div></div>
+<div class="opt warn"><h4>C. Delocalizzazione partendo dal contributo D</h4>
+<p style="margin:0">L'art. 14 consente di destinare alla delocalizzazione i contributi dell'art. 12, commi 1 e 9; il comma 9 comprende anche quello per la vulnerabilità. È una lettura del testo, da confermare con le ordinanze del Commissario.</p></div>
+<div class="opt warn"><h4>E. Soli danni estetici</h4>
+<p style="margin:0">Il decreto non prevede contributi per il danno. Restano D, se la fascia CARTIS lo consente, e le detrazioni fiscali ordinarie (ristrutturazioni, sismabonus).</p></div>
+</div>
+</div>
+<blockquote><p><b>Per tutte le linee</b> serve lo stato legittimo dell'edificio: titolo edilizio conforme, sanatoria ottenuta entro la domanda o, per gli immobili oggetto di contributo, sanatoria in corso con la procedura dell'art. 13 DL 205/2026. Ogni contributo è calcolato al netto di altri contributi e indennizzi per gli stessi danni.</p></blockquote>
+<h3 id="ripristino-eventi">Ripristino ordinario: differenze tra gli eventi</h3>
+<p>Tutti i regimi rinviano alle stesse regole dell'art. 9-novies DL 76/2024 (commi 2, 3, 4, 5 e 7): massimali e requisiti sono identici. Cambiano date, termini per lo sgombero, risorse e, per l'ultimo evento, i Comuni.</p>
+<div class="tw"><table>
+<thead><tr><th></th><th>20/05/2024</th><th>13 e 15/03/2025</th><th>Maggio–settembre 2025 e 21/05/2026</th><th>31/07 e 01/08/2026</th></tr></thead>
+<tbody>
+<tr><td><b>Norma</b></td><td>Art. 9-novies DL 76/2024</td><td>Art. 12 DL 65/2025</td><td>Art. 12 DL 65/2025, esteso dall'art. 14 DL 144/2026</td><td>Art. 13 DL 144/2026, modificato dall'art. 15 DL 205/2026</td></tr>
+<tr><td><b>Sgombero (o richiesta di verifica) entro</b></td><td>3/07/2024</td><td>Entrata in vigore del DL 65 (maggio 2025)</td><td>30/06/2026</td><td>30/09/2026</td></tr>
+<tr><td><b>Comuni</b></td><td>Bacoli, Pozzuoli, Napoli</td><td>Bacoli, Pozzuoli, Napoli</td><td>Bacoli, Pozzuoli, Napoli</td><td>Monte di Procida, Bacoli, Pozzuoli, Napoli</td></tr>
+<tr><td><b>Risorse</b></td><td>20 mln (2024), 15 mln (2025), 15 mln (2026)</td><td>20 mln (2025), 15 mln (2026), 15 mln (2027)</td><td>Stesso fondo del DL 65</td><td>100 mln (30 nel 2026, 70 nel 2027)</td></tr>
+<tr><td><b>Termini delle domande</b></td><td>Fissati dai Comuni; riapribili (art. 14 DL 144)</td><td>Delibera di Giunta; riapribili (art. 14 DL 144)</td><td>Delibera di Giunta</td><td>Delibera di Giunta</td></tr>
+</tbody></table></div>
+<p><b>Uguale per tutti gli eventi:</b></p>
+<ul>
+<li><b>Accesso:</b> abitazione principale danneggiata e sgomberata; domanda del proprietario, dell'usufruttuario o dell'inquilino delegato; una domanda per unità.</li>
+<li><b>Massimali per m² di superficie coperta:</b> 450 €/m² per danni leggeri, 1.200 €/m² per danni severi (definizioni dell'ordinanza n. 130/2022). Il costo ammissibile è il minore tra il costo reale e il costo convenzionale, che il DL 205 (art. 12, c. 1) calcola con i costi parametrici dell'ordinanza n. 130/2022.</li>
+<li><b>Documenti obbligatori:</b> provvedimento di sgombero; perizia asseverata sul nesso causale con descrizione dei danni e computo dei lavori; stato legittimo. Spese tecniche fino al 10% dei lavori.</li>
+<li><b>Edifici con più unità:</b> progetto unitario per l'intera unità strutturale; domanda per le parti comuni presentata dall'amministratore; lo stato legittimo riguarda l'edificio, non le difformità delle singole unità.</li>
+<li><b>Dal DL 205:</b> domande e decisioni passano al Commissario, che decide entro 60 giorni; le domande pendenti presso i Comuni gli vengono trasmesse; la domanda va presentata insieme alla richiesta del titolo edilizio.</li>
+</ul>
+<blockquote><p><b>Domande già respinte.</b> Il DL 205 regola solo le domande pendenti (art. 12, c. 10) e quelle nuove (c. 11). Chi ha avuto un rigetto può ripresentare la domanda se viene riaperto un termine (art. 14 DL 144/2026) oppure contestare il rigetto (riesame in autotutela, ricorso al TAR entro 60 giorni o straordinario entro 120).</p></blockquote>
+<p class="disc">Fonti: DL 205/2026 (artt. 12–16); DL 144/2026 (artt. 13–14); DL 65/2025 (art. 12); DL 76/2024 (art. 9-novies); L. 207/2024 (c. 694–702); DM 12/11/2025; <a href="https://rischi.protezionecivile.gov.it/it/vulcanico/vulcani-italia/campi-flegrei/il-bradisismo-ai-campi-flegrei/domande-e-risposte/domande-e-risposte-sul-piano-di-vulnerabilita-i-campi-flegrei/">FAQ Protezione civile sul Piano di vulnerabilità</a>. Sintesi informativa, non sostituisce i testi ufficiali né un parere professionale.</p>
+
 <h2>Catena dei rinvii</h2>
 <div class="tw"><table>
 <thead>
